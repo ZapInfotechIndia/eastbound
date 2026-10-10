@@ -1,0 +1,276 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+* {
+  /* border: red 1px solid; */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #d2232a;
+  --blue: #005696;
+  --blue-dark: #132436;
+  --blue-light: #97b4de;
+
+  /* Neutrals */
+  --cream: oklch(0.985 0.008 85); /* soft off-white */
+  --ink: oklch(0.18 0.03 245);
+
+  /* --background: var(--cream); */
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --secondary: oklch(0.95 0.008 85);
+  --secondary-foreground: var(--primary);
+  --muted: oklch(0.94 0.008 85);
+  --muted-foreground: oklch(0.5 0.02 245);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.005 90);
+  --border: oklch(0.88 0.01 245 / 0.5);
+  --input: oklch(0.88 0.01 245);
+  --ring: var(--primary);
+}
+
+/* For Tailwind CSS to recognize the custom properties, we need to define them in a theme block. This allows us to use these variables throughout our Tailwind CSS classes. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue-light: var(--blue-light);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-cormorant);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--primary);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: #0f172a;
+  transition: transform 1800ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.site-loader--hidden {
+  transform: translateY(-105%);
+}
+
+.site-loader__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+.site-loader__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.site-loader__number {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(5rem, 11vw, 1rem);
+  line-height: 0.86;
+  letter-spacing: -0.09em;
+  font-weight: 500;
+}
+
+.site-loader__text {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: clamp(0.84rem, 1.6vw, 1rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  /* color: rgba(15, 23, 42, 0.5); */
+  color: var(--blue-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-loader {
+    transition: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    @apply font-serif leading-none;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+}
+
+.container {
+  @apply px-4 sm:mx-auto sm:max-w-5xl md:max-w-7xl;
+  /* Working on all screen sizes  */
+}
+
+.nav-link {
+  @apply rounded-md px-3 py-2 text-sm tracking-wider text-neutral-300 uppercase transition-colors duration-200 hover:text-white;
+}
+
+/* Fancy border-hover card */
+@utility card-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background: var(--color-primary);
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
+    pointer-events: none;
+  }
+  /* horizontal lines */
+  &::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  &::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  &:hover::before,
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility image-reveal {
+  overflow: hidden;
+  position: relative;
+
+  & > img,
+  & > video {
+    transition:
+      transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 900ms ease;
+    transform: scale(1.08);
+    opacity: 0;
+  }
+
+  &.is-visible > img,
+  &.is-visible > video {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility marquee-track {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.btn-link-icon {
+  @apply transition-transform duration-300 hover:translate-x-1;
+}

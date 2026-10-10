@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06131e">
+<title>Eastbound Agent Collective — Arriving Soon</title>
+<meta name="description" content="The Eastbound Agent Collective, a private platform for our agent partners, is arriving soon.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2306131e'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23d2232a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#06131e; --blue-dark:#132436; --red:#d2232a; --cream:#fdfaf4; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ min-height:100%; }
+  body{ font-family:Montserrat,"Helvetica Neue",Arial,sans-serif; color:#fff; background:var(--blue-dark);
+    min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; }
+  .frame{ flex:1; display:flex; flex-direction:column; padding:38px clamp(20px,5vw,64px); }
+  header{ text-align:center; }
+  .logo{ width:172px; max-width:48%; height:auto; }
+  main{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    gap:22px; padding:40px 0; animation:rise 1s ease both; animation-delay:.12s; }
+  .eyebrow{ font-size:12px; font-weight:500; letter-spacing:.32em; padding-left:.32em; text-transform:uppercase; color:var(--cream); }
+  .rule{ width:44px; height:2px; background:var(--red); border:0; }
+  h1{ font-family:"Cormorant Garamond",Georgia,serif; font-weight:500; font-size:clamp(44px,8vw,88px);
+    line-height:1.02; letter-spacing:-.01em; color:#fff; text-wrap:balance; text-shadow:0 1px 24px rgba(6,19,30,.6); }
+  .lede{ font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; max-width:44ch;
+    color:rgba(253,250,244,.9); text-shadow:0 1px 18px rgba(6,19,30,.55); }
+  footer{ text-align:center; font-size:10.5px; line-height:1.7; letter-spacing:.2em; padding-left:.2em;
+    text-transform:uppercase; color:rgba(253,250,244,.62); }
+  @keyframes rise{ from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:none;} }
+  @media (prefers-reduced-motion:reduce){ main{ animation:none; } }
+  @media (max-width:420px){ .eyebrow{ font-size:11px; letter-spacing:.2em; } h1{ font-size:clamp(40px,11vw,60px); } }
+</style>
+</head>
+<body>
+
+  <div class="frame">
+    <header><img class="logo" src="/logo/logo-white.png" alt="Eastbound" width="172" height="33"></header>
+    <main>
+      <p class="eyebrow">Eastbound Agent Collective</p>
+      <hr class="rule" aria-hidden="true">
+      <h1>Arriving soon</h1>
+      <p class="lede">A private platform for our agent partners. Curated itineraries, destination intelligence and the specialists who craft every journey, coming together in one place.</p>
+    </main>
+    <footer>Eastbound &middot; Timeless expeditions across five countries</footer>
+  </div>
+
+<style>
+  body{ background-image:
+      radial-gradient(78% 56% at 50% 50%, rgba(6,19,30,.82) 0%, rgba(6,19,30,.4) 68%, rgba(6,19,30,.22) 100%),
+      linear-gradient(180deg, rgba(19,36,54,.55) 0%, rgba(6,19,30,.5) 45%, rgba(6,19,30,.92) 100%),
+      url('/images/agent-collective-bg.jpg');
+    background-size:cover; background-position:center; background-repeat:no-repeat; }
+</style>
+</body>
+</html>
