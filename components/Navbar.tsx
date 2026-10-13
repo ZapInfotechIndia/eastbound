@@ -171,7 +171,7 @@ const Navbar = () => {
               }`}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-[-2px]">
-                Agent<span className="hidden sm:inline"> Collective</span>
+                Partner<span className="hidden sm:inline"> Collective</span>
               </span>
               <ArrowUpRight className="h-0 w-0 translate-x-2 opacity-0 transition-all duration-300 ease-out group-hover:h-3.5 group-hover:w-3.5 group-hover:translate-x-0 group-hover:opacity-100 sm:group-hover:h-4 sm:group-hover:w-4" />
             </Link>
