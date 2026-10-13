@@ -27,15 +27,15 @@ const MenuMark = ({ isScrolled = false }: { isScrolled?: boolean }) => (
   //   />
   // </svg>
   <Image
-    src={"/images/menu-icon.svg"}
-    alt="Menu"
-    width={20}
-    height={20}
-    className={
-      isScrolled
-        ? "mb-1.5 scale-80 brightness-0 sm:mb-0 sm:scale-100"
-        : "mb-1.5 scale-80 sm:mb-0 sm:scale-100"
-    }
+      src={"/images/menu-icon.svg"}
+      alt="Menu"
+      width={20}
+      height={20}
+      className={
+        isScrolled
+          ? "mb-1.5 scale-80 brightness-0 sm:mb-0 sm:scale-100"
+          : "mb-1.5 scale-80 sm:mb-0 sm:scale-100"
+      }
   />
 );
 
@@ -171,7 +171,9 @@ const Navbar = () => {
               }`}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-[-2px]">
-                Partner<span className="hidden sm:inline"> Collective</span>
+                <span className="sm:hidden">Partner</span>
+                   <span className="hidden sm:inline">Agent</span>
+                   <span className="hidden sm:inline"> Collective</span>
               </span>
               <ArrowUpRight className="h-0 w-0 translate-x-2 opacity-0 transition-all duration-300 ease-out group-hover:h-3.5 group-hover:w-3.5 group-hover:translate-x-0 group-hover:opacity-100 sm:group-hover:h-4 sm:group-hover:w-4" />
             </Link>
@@ -183,12 +185,12 @@ const Navbar = () => {
                   : "hover:text-blue-dark border border-white/70 text-white hover:bg-white"
               }`}
             >
-              <span className="transition-transform duration-300 group-hover:translate-x-[-2px]">
-                Event<span className="hidden sm:inline"> Exchange</span>
-              </span>
+              <span className="sm:hidden">Event</span>
+              <span className="hidden sm:inline">Events Exchange</span>
               <ArrowUpRight className="h-0 w-0 translate-x-2 opacity-0 transition-all duration-300 ease-out group-hover:h-3.5 group-hover:w-3.5 group-hover:translate-x-0 group-hover:opacity-100 sm:group-hover:h-4 sm:group-hover:w-4" />
             </Link>
           </div>
+
         </div>
       </nav>
 
