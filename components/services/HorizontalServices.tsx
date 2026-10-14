@@ -9,112 +9,145 @@ export function HorizontalServices({ items }: { items: FeatureBlock[] }) {
 
   const [progress, setProgress] = useState(0);
   const [distance, setDistance] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const measure = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    setDistance(Math.max(0, track.scrollWidth - window.innerWidth + 48));
+    const viewport = window.innerWidth;
+    const height = window.innerHeight;
+    const maxDistance = Math.max(0, track.scrollWidth - viewport);
+
+    setDistance(maxDistance);
+    setViewportHeight(height);
   }, []);
 
   useEffect(() => {
     measure();
 
+    const observer = new ResizeObserver(measure);
+    if (trackRef.current) observer.observe(trackRef.current);
+
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
   }, [measure, items]);
 
   useEffect(() => {
-    const onScroll = () => {
-      const el = wrapRef.current;
-      if (!el) return;
+    const updateProgress = () => {
+      const section = wrapRef.current;
+      if (!section) return;
 
-      const rect = el.getBoundingClientRect();
-      const total = el.offsetHeight - window.innerHeight;
+      const maxScroll = section.offsetHeight - window.innerHeight;
+      const sectionTop = section.getBoundingClientRect().top;
 
-      const p =
-        total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+      const nextProgress =
+        maxScroll > 0
+          ? Math.min(1, Math.max(0, -sectionTop / maxScroll))
+          : 0;
 
-      setProgress(p);
+      setProgress(nextProgress);
 
       const track = trackRef.current;
-      if (track) {
-        const maxScroll = Math.max(
-          1,
-          track.scrollWidth - window.innerWidth + 48,
-        );
+      if (track && items.length > 0) {
+        const cards = track.querySelectorAll("article");
+        const firstCard = cards[0] as HTMLElement | undefined;
 
-        const index = Math.round(
-          (p * maxScroll) /
-            Math.max(1, (items.length - 1) * 26 * 16),
-        );
+        if (firstCard) {
+          const cardStep =
+            firstCard.getBoundingClientRect().width + 24;
 
-        setActiveIndex(Math.min(items.length - 1, Math.max(0, index)));
+          const offset = nextProgress * distance;
+          const index =
+            cardStep > 0 ? Math.round(offset / cardStep) : 0;
+
+          setActiveIndex(Math.min(items.length - 1, index));
+        }
       }
     };
 
-    onScroll();
+    updateProgress();
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("scroll", updateProgress, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateProgress);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
     };
-  }, [items.length]);
+  }, [distance, items.length, viewportHeight]);
 
   const navigate = useCallback(
     (direction: "prev" | "next") => {
-      const el = wrapRef.current;
-      if (!el) return;
+      const section = wrapRef.current;
+      const track = trackRef.current;
 
-      const rect = el.getBoundingClientRect();
-      const total = el.offsetHeight - window.innerHeight;
+      if (!section || !track || distance <= 0) return;
 
-      const currentProgress =
-        total > 0
-          ? Math.min(1, Math.max(0, -rect.top / total))
-          : 0;
+      const cards = track.querySelectorAll("article");
+      const firstCard = cards[0] as HTMLElement | undefined;
 
-      const step = 1 / Math.max(1, items.length - 1);
+      if (!firstCard) return;
 
-      const nextProgress =
+      const cardStep = firstCard.getBoundingClientRect().width + 24;
+      const sectionTop = section.getBoundingClientRect().top;
+      const maxScroll = section.offsetHeight - window.innerHeight;
+
+      const currentOffset = Math.min(
+        distance,
+        Math.max(0, (-sectionTop / Math.max(1, maxScroll)) * distance),
+      );
+
+      const nextOffset =
         direction === "next"
-          ? Math.min(1, currentProgress + step)
-          : Math.max(0, currentProgress - step);
+          ? Math.min(distance, currentOffset + cardStep)
+          : Math.max(0, currentOffset - cardStep);
 
       const targetY =
-        window.scrollY + rect.top + nextProgress * total;
+        window.scrollY +
+        sectionTop +
+        (nextOffset / distance) * maxScroll;
 
       window.scrollTo({
-        top: targetY,
+        top: Math.max(0, targetY),
         behavior: "smooth",
       });
     },
-    [items.length],
+    [distance],
   );
 
   return (
     <section id="all-services" className="bg-secondary/60">
-      {/* Mobile: stacked cards */}
+      {/* Mobile: normal vertical scrolling */}
       <div className="container-x space-y-6 py-20 lg:hidden">
-        {items.map((s) => (
-          <Card key={s.id} item={s} />
+        {items.map((item) => (
+          <Card key={item.id} item={item} />
         ))}
       </div>
 
-      {/* Desktop: horizontal scroll */}
+      {/* Desktop: scroll-controlled horizontal cards */}
       <div
         ref={wrapRef}
         className="relative hidden lg:block"
-        style={{ height: `${100 + items.length * 60}vh` }}
+        style={{
+          height: `${viewportHeight + distance}px`,
+        }}
       >
         <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
           <div className="container mb-8 flex items-end justify-between gap-6">
             <div>
-              <p className="eyebrow mb-3 text-blue-light">Our services</p>
+              <p className="eyebrow mb-3 text-blue-light">
+                Our services
+              </p>
+
               <h2 className="font-serif text-4xl leading-[1.05] text-blue-dark xl:text-5xl">
                 Scroll to explore.
               </h2>
@@ -124,7 +157,7 @@ export function HorizontalServices({ items }: { items: FeatureBlock[] }) {
               <button
                 type="button"
                 onClick={() => navigate("prev")}
-                disabled={progress <= 0.005}
+                disabled={progress <= 0.001}
                 aria-label="Previous service"
                 className="flex h-12 w-12 items-center justify-center border border-blue-dark/25 text-blue-dark transition hover:bg-blue-dark hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
               >
@@ -144,7 +177,7 @@ export function HorizontalServices({ items }: { items: FeatureBlock[] }) {
               <button
                 type="button"
                 onClick={() => navigate("next")}
-                disabled={progress >= 0.995}
+                disabled={progress >= 0.999}
                 aria-label="Next service"
                 className="flex h-12 w-12 items-center justify-center border border-blue-dark/25 text-blue-dark transition hover:bg-blue-dark hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
               >
@@ -165,15 +198,15 @@ export function HorizontalServices({ items }: { items: FeatureBlock[] }) {
 
           <div
             ref={trackRef}
-            className="flex gap-6 pl-6 will-change-transform md:pl-12 xl:pl-20"
+            className="flex w-max gap-6 pl-6 pr-6 will-change-transform md:pl-12 xl:pl-20"
             style={{
               transform: `translate3d(-${progress * distance}px, 0, 0)`,
             }}
           >
-            {items.map((s) => (
+            {items.map((item) => (
               <Card
-                key={s.id}
-                item={s}
+                key={item.id}
+                item={item}
                 className="w-[26rem] shrink-0"
               />
             ))}
@@ -182,13 +215,17 @@ export function HorizontalServices({ items }: { items: FeatureBlock[] }) {
           <div className="container-x mt-8">
             <div className="relative h-px w-full bg-border/70">
               <span
-                className="absolute inset-y-0 left-0 h-px bg-accent"
-                style={{ width: `${Math.max(6, progress * 100)}%` }}
+                className="absolute inset-y-0 left-0 bg-accent"
+                style={{
+                  width: `${Math.max(0, progress * 100)}%`,
+                }}
               />
             </div>
 
             <p className="mt-3 text-right text-xs tracking-widest text-blue-dark/60">
-              {String(Math.min(items.length, activeIndex + 1)).padStart(2, "0")}
+              {String(
+                Math.min(items.length, activeIndex + 1),
+              ).padStart(2, "0")}
               {" / "}
               {String(items.length).padStart(2, "0")}
             </p>
