@@ -110,7 +110,7 @@ export const destinationPages: DestinationPage[] = [
     tagline:
       "Authentic Himalayan experiences centred on happiness and sustainability.",
     intro:
-      "The last Himalayan kingdom, Bhutan is a destination of controlled, considered tourism — and that suits the way we travel. We handle every permit and logistic detail so travellers can focus on a country unlike anywhere else on earth.",
+      "The last Himalayan kingdom, Bhutan is a destination of controlled, considered tourism - and that suits the way we travel. We handle every permit and logistic detail so travellers can focus on a country unlike anywhere else on earth.",
     highlights: [
       {
         label: "Cultural immersion",

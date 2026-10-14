@@ -82,7 +82,7 @@ const DestinationsPage = () => {
         <CtaBand
           eyebrow="Plan with us"
           title="Not sure where to begin? Start with a conversation."
-          copy="Tell our destination specialists who is travelling and what moves them — we will shape the route around it."
+          copy="Tell our destination specialists who is travelling and what moves them - we will shape the route around it."
           cta="Make an enquiry"
         />
       </main>
