@@ -13,7 +13,7 @@ const DestinationsPage = () => {
     <>
       <SubHero
         eyebrow="Curated escapes"
-        title="Discover India and the Sub-Continent Through Local Experts "
+        title="Discover India and the Sub-Continent Through Local Experts"
         description="Discover Eastbound’s five specialist destinations - India, Nepal, Bhutan, Sri Lanka and the UAE - and see how our on-the-ground teams curate access most visitors never see."
         backgroundVideo="9022vXqxureSKaBH7UZ00WYFRULLTuB8WbaVrOxSCFiD4"
       />
