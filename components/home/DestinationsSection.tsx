@@ -80,7 +80,7 @@ const DestinationsSection = () => {
           </div>
 
           <p className="text-blue-dark/70 max-w-md pb-1 text-sm leading-6 sm:text-base sm:leading-7">
-            Every Eastbound journey begins with a conversation about place — and
+            Every Eastbound journey begins with a conversation about place and
             the specific way you would like to inhabit it.
           </p>
         </div>
