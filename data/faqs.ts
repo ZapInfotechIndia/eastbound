@@ -17,7 +17,7 @@ export const faqs: FaqItem[] = [
     question:
       "Does Eastbound book directly with travellers, or only through agents?",
     answer:
-      "Eastbound works B2B and B2D—designing and operating journeys on behalf of tour operators, travel agents and wholesalers, rather than selling direct to individual travellers. We are equipped with the primary technical infrastructure that connects massive global travel databases to travel apps, websites and agency portals.",
+      "Eastbound works B2B and B2D-designing and operating journeys on behalf of tour operators, travel agents and wholesalers, rather than selling direct to individual travellers. We are equipped with the primary technical infrastructure that connects massive global travel databases to travel apps, websites and agency portals.",
   },
   {
     question: "How long has Eastbound been operating?",

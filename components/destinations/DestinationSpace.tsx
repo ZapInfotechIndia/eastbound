@@ -117,7 +117,7 @@ const DestinationSpace = ({ destinationId }: DestinationSpaceProps) => {
             </h2>
             <p className="mt-6 max-w-md leading-relaxed text-neutral-700">
               Every journey is shaped around your pace, interests and travel
-              style — from immersive cultural moments to private luxury
+              style - from immersive cultural moments to private luxury
               experiences.
             </p>
           </Reveal>
