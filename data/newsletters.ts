@@ -29,7 +29,7 @@ export const pressItems: PressItem[] = [
     publication: "Voyager Weekly",
     date: "June 2026",
     summary:
-      "A fortnight walking in Bhutan with Eastbound's Himalayan team — tea, silence and Gross National Happiness.",
+      "A fortnight walking in Bhutan with Eastbound's Himalayan team - tea, silence and Gross National Happiness.",
     image: "/images/newsletters/n2.jpg",
   },
   {
@@ -56,7 +56,7 @@ export const pressItems: PressItem[] = [
     publication: "Voyager Weekly",
     date: "June 2026",
     summary:
-      "A fortnight walking in Bhutan with Eastbound's Himalayan team — tea, silence and Gross National Happiness.",
+      "A fortnight walking in Bhutan with Eastbound's Himalayan team - tea, silence and Gross National Happiness.",
     image: "/images/newsletters/n2.jpg",
   },
   {
@@ -101,7 +101,7 @@ export const newsletterIssues: NewsletterIssue[] = [
     title: "Designing incentives that travel well",
     date: "April 2026",
     summary:
-      "What worked for 400 delegates in Dubai and Jaipur — and what we would do differently.",
+      "What worked for 400 delegates in Dubai and Jaipur - and what we would do differently.",
   },
   {
     id: "issue-11",
