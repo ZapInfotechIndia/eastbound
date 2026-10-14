@@ -38,7 +38,7 @@ const WhySection = () => {
           <p className="eyebrow text-blue-light mb-8 text-xs">Why Eastbound</p>
           <h2 className="font-serif text-4xl leading-[1.05] md:text-5xl">
             The difference is in the{" "}
-            <span className="text-primary">detail</span> - and in the people who
+            <span className="text-primary">detail</span>  and in the people who
             design it.
           </h2>
         </Reveal>
