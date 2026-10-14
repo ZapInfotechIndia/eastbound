@@ -80,7 +80,7 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Enquiry form — wide form, narrow sticky note column */}
+        {/* Enquiry form - wide form, narrow sticky note column */}
         <section id="enquiry" className="bg-background py-24 md:py-32">
           <div className="container grid gap-12 lg:grid-cols-12 lg:gap-20">
             <Reveal className="lg:col-span-4">
@@ -89,8 +89,8 @@ const ContactPage = () => {
                 Tell us about the programme you have in mind.
               </h2>
               <p className="text-muted-foreground mt-6 leading-relaxed font-light">
-                The more you share — dates, party size, the brand this needs to
-                reflect — the sharper our first proposal will be.
+                The more you share - dates, party size, the brand this needs to
+                reflect - the sharper our first proposal will be.
               </p>
               <p className="text-accent mt-10 font-serif text-xl italic">
                 One point of contact, from first brief to homecoming.
@@ -103,7 +103,7 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Offices — asymmetric stagger */}
+        {/* Offices - asymmetric stagger */}
         <section
           className="relative overflow-hidden bg-neutral-100 bg-cover bg-center bg-no-repeat py-24 md:py-32"
           style={{ backgroundImage: `url('/images/offices.jpg')` }}
