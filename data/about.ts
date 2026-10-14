@@ -8,7 +8,7 @@ import heroImage from "@/assets/hero-india.jpg";
 export const aboutHero = {
   eyebrow: "Why Eastbound",
   title: "Local Knowledge. Global Standards.",
-  copy: "For more than two decades, Eastbound has been designing and executing journeys across India, Nepal, Bhutan, Sri Lanka and the UAE for the world's most discerning travel companies — built on the belief that the best experiences come from people who know a place as home, not just a destination.",
+  copy: "For more than two decades, Eastbound has been designing and executing journeys across India, Nepal, Bhutan, Sri Lanka and the UAE for the world's most discerning travel companies - built on the belief that the best experiences come from people who know a place as home, not just a destination.",
   image: heroImage,
 };
 
@@ -17,7 +17,7 @@ export const story = {
   title: "Two Decades of Getting the Details Right",
   paragraphs: [
     "Eastbound was founded in 2006 with a simple idea: that great travel experiences are built from the ground up, by people who live and breathe the destinations they design for. What began as a specialist boutique company has over two decades grown into a full destination management group spanning five countries, serving luxury tour operators, incentive houses and educational institutions around the world.",
-    "Today, that same founding philosophy — local intelligence, meticulous planning and hands-on execution — shapes every itinerary we build, from a four-person photography expedition to a 200-delegate incentive programme.",
+    "Today, that same founding philosophy - local intelligence, meticulous planning and hands-on execution - shapes every itinerary we build, from a four-person photography expedition to a 200-delegate incentive programme.",
   ],
   stats: [
     { figure: "2006", label: "Founded" },
@@ -121,4 +121,4 @@ export const brandFamily = {
 };
 
 export const aboutSignature =
-  "Eastbound — Twenty Years of Local Knowledge, Global Standards, Extraordinary Journeys.";
+  "Eastbound - Twenty Years of Local Knowledge, Global Standards, Extraordinary Journeys.";

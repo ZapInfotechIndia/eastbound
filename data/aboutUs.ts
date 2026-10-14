@@ -17,8 +17,8 @@ export const aboutUsStory = {
   eyebrow: "Our Story",
   title: "Built here, shaped by two decades of travel.",
   paragraphs: [
-    "Eastbound was founded in 2006 on a simple premise: that the best travel experiences are built from the ground up, by people who live in the destinations they design for, not by people looking at them from a head office overseas. What began as a specialist boutique has grown, over two decades, into a full destination management group spanning five countries — serving luxury tour operators, incentive houses and educational institutions worldwide.",
-    "That founding philosophy — local intelligence, meticulous planning and hands-on execution — still shapes every itinerary Eastbound builds today, from a single-traveller birding expedition to a 200-delegate incentive programme.",
+    "Eastbound was founded in 2006 on a simple premise: that the best travel experiences are built from the ground up, by people who live in the destinations they design for, not by people looking at them from a head office overseas. What began as a specialist boutique has grown, over two decades, into a full destination management group spanning five countries - serving luxury tour operators, incentive houses and educational institutions worldwide.",
+    "That founding philosophy - local intelligence, meticulous planning and hands-on execution - still shapes every itinerary Eastbound builds today, from a single-traveller birding expedition to a 200-delegate incentive programme.",
   ],
   milestones: [
     { value: "2006", label: "Eastbound founded" },
@@ -79,7 +79,7 @@ export const leaders: PersonProfile[] = [
     biography: [
       "Manish Pratik is a co-founder and Director of Eastbound, with over two decades of experience in the travel and tourism industry. An innovator at heart, he has been instrumental in shaping Eastbound’s philosophy of creating journeys that go beyond the conventional, with a particular focus on discovering lesser-known destinations and developing distinctive travel experiences.",
       "Known for his forward-looking approach, Manish has consistently embraced technology and innovation to modernise travel and destination management. At Eastbound, he has championed the integration of technology across business processes, helping break silos and create more efficient, connected ways of delivering experiences to travellers and partners.",
-      "His interests outside work — particularly his love for nature, photography and cycling — also inform his perspective on travel. He has a strong appreciation for experiences rooted in place, culture and the outdoors, and has been closely involved in developing products that take travellers beyond the familiar.",
+      "His interests outside work - particularly his love for nature, photography and cycling - also inform his perspective on travel. He has a strong appreciation for experiences rooted in place, culture and the outdoors, and has been closely involved in developing products that take travellers beyond the familiar.",
       "With a reputation for innovation and an instinct for emerging travel trends, Manish continues to play a key role in Eastbound’s evolution as an experiential travel company.",
     ],
   },
