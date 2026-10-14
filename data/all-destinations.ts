@@ -67,7 +67,7 @@ export const allDestinations: DestinationDetail[] = [
         name: "Mumbai",
         image: "/images/destinations/india/cities/mumbai.jpg",
         description:
-          "India's financial and cinematic capital — energetic waterfronts, colonial architecture and a thriving food scene.",
+          "India's financial and cinematic capital - energetic waterfronts, colonial architecture and a thriving food scene.",
       },
       {
         name: "Kochi",
