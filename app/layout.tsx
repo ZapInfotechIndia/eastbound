@@ -9,10 +9,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Eastbound Group",
@@ -27,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${montserrat.variable}  h-full antialiased`}
     >
       <body className="min-h-full">
         <SmoothScrollProvider>
