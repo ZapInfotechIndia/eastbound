@@ -17,7 +17,7 @@ export default function HeroBottomBanner() {
 
         {/* Desktop: 1024px and above */}
         <img
-          src="/images/Desktop.jpg"
+          src="/images//Desktop.jpg"
           alt="Featured banner"
           className="block h-auto w-full"
           loading="lazy"
