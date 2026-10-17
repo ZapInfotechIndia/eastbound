@@ -1,5 +1,6 @@
 import BlocksSection from "@/components/home/BlocksSection";
 import Hero from "@/components/home/Hero";
+import HeroBottomBanner from "@/components/home/HeroBottomBanner";
 import WhySection from "@/components/home/WhySection";
 import DestinationsSection from "@/components/home/DestinationsSection";
 import { SignatureExperiencesSection } from "@/components/home/SignatureExperiencesSection";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
+      <HeroBottomBanner />
       {/* <BlocksSection /> */}
       <DestinationsSection />
       <WhySection />
