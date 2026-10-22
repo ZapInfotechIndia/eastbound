@@ -18,7 +18,7 @@ export const posts: Post[] = [
       "From Eye to Eye Eastbound - Narendra Bhawan, Bikaner - Kites, Chai & Calligraphy and more",
     date: "October 2026",
     readTime: "20 minutes",
-    image: "/images/newsletters/October2026.png",
+    image: "/images/newsletters/October2026.jpg",
     link: "https://eastboundgroup.aflip.in/119b1c212e.html",
   },
   {
