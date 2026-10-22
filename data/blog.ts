@@ -19,7 +19,7 @@ export const posts: Post[] = [
       "From Ran Baas palace, Patiala - Chambal River Safari - Ganga Dussehra and more",
     date: "May 2026",
     readTime: "20 minutes",
-    image: "/images/newsletters/October2026.png",
+    image: "/images/newsletters/October2026.jpg",
     link: "https://eastboundgroup.aflip.in/119b1c212e.html",
   },
   {
