@@ -11,15 +11,15 @@ export type Post = {
 
 export const posts: Post[] = [
   {
-    id: "september-2026",
+    id: "october-2026",
     category: "Eastnews",
-    title: "September 2026",
+    title: "October 2026",
     excerpt:
       "From Eye to Eye Eastbound - Narendra Bhawan, Bikaner - Kites, Chai & Calligraphy and more",
-    date: "September 2026",
+    date: "October 2026",
     readTime: "20 minutes",
-    image: "/images/newsletters/September2026.png",
-    link: "https://eastboundgroup.aflip.in/63656de1f8.html#page/1",
+    image: "/images/newsletters/October2026.png",
+    link: "https://eastboundgroup.aflip.in/119b1c212e.html",
   },
   {
     id: "july-2026",
