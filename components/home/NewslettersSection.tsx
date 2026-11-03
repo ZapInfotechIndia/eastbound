@@ -61,9 +61,7 @@ export function NewslettersSection() {
                       {p.date}
                     </span>
                     <span className="h-px w-3 bg-neutral-400" />
-                    <span className="text-blue-light font-semibold">
-                      {p.readTime}
-                    </span>
+                    
                   </div>
                   <h3 className="group-hover:text-accent mb-3 font-serif text-2xl leading-snug text-neutral-700 transition-colors md:text-[1.7rem]">
                     {p.title}
