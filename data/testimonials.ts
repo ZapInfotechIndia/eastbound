@@ -23,4 +23,28 @@ export const testimonials: Testimonial[] = [
     author: "Andrew Skarvinko",
     role: "Director, PhotoFly Travel Club",
   },
+
+
+  {
+  quote: "I waited my whole life to go to India. Even after I entered the travel industry, both personally and professionally, I knew it was a destination I wanted to experience in the right way, with the right people. I had built it up in my head for so long, and somehow traveling with Reshma and the extended Eastbound family exceeded every expectation I had. What impressed me most was the incredible care and attention to detail throughout the trip. In a relatively short amount of time, I came away feeling like I truly understood India from a travel designer’s perspective: how the destinations fit together, what experiences are worth prioritizing, the nuances between properties, and ultimately how to design the country for my own clients. More importantly, I trust the EB team implicitly with my clients on the ground. They are incredibly thoughtful, flexible, and quick on their feet. On the rare occasion that something needs to shift or a problem arises, they step up immediately and find a solution. That kind of partnership is invaluable in this industry.",
+  author: "Alexis Stein",
+  role: "Alexis Stein"
+},
+{
+  quote: "We have worked with Eastbound for a number of years on our study tours to Bhutan. They have always provided excellent service, responsive and efficient. Their guides are very good, and our travellers have greatly enjoyed being on tours organised by them. We will continue to work with them.",
+  author: "Jon Baines",
+  role: "MD, Jon Baines Tours - UK & Australia"
+},
+{
+  quote: "I truly love working with the Eastbound team. Their service goes far beyond expectations, and their extensive destination knowledge helps us create the perfect tailor-made journey for every guest. Our guests are delighted by the genuine care and attention to their individual needs and wishes throughout their stay. I simply couldn’t imagine a better partner.",
+  author: "Lhamo Tsering",
+  role: "Director of Sales, tourasia, Switzerland"
+},
+{
+  quote: "Over many years, the Eastbound team has become not only a trusted partner, but also valued and close friends. As Product Director, I greatly appreciate their passion for product innovation, exceptional attention to detail and, above all, their deep understanding of our needs as a specialist in tailor-made travel.",
+  author: "Philipp Dinkel",
+  role: "Product Director, tourasia, Switzerland"
+},
+
+  
 ];

@@ -29,7 +29,7 @@ export function Testimonials() {
               &ldquo;{t.quote}&rdquo;
             </p>
             <footer className="mt-10">
-              s{" "}
+              {" "}
               <p className="text-blue-light text-sm tracking-[0.2em] uppercase">
                 {t.author}
               </p>
