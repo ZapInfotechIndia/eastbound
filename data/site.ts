@@ -15,7 +15,7 @@ export const site = {
     { label: "Destinations", href: "/destinations" },
     { label: "Experiences", href: "/experiences" },
     { label: "Services", href: "/services" },
-    { label: "Newsletters", href: "/newsletters" },
+    { label: "Newsletters", href: "#" },
     { label: "About Us", href: "/about-us" },
     { label: "Contact", href: "/contact" },
   ],

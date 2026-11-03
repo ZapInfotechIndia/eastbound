@@ -18,8 +18,9 @@ export function NewslettersSection() {
               From the <span className="text-accent">Eastbound</span> journal.
             </h2>
           </div>
+          {/* href="/newsletters" */}
           <Link
-            href="/newsletters"
+            href="#"
             className={cn(buttonVariants({ variant: "link", size: "link" }))}
           >
             View all <span className="btn-link-icon">→</span>
