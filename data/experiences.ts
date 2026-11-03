@@ -20,11 +20,11 @@ export const experiences: Experience[] = [
   },
   {
     id: "birding-tours",
-    title: "Watch the birds in their little worlds",
+    title: "Watch the birds in their little worlds, in harmony with nature",
     location: "Birding Tours",
     duration: "9 nights",
     image: "/images/experiences/birds.jpg",
-    copy: "Explore some of Asia's richest biodiversity hotspots.",
+    copy: "Explore some of Asia’s richest biodiversity hotspots, where beautful landscapes meet unique ecosystems, and every journey reveals nature’s remarkable diversity.",
     href: "/experiences#birding",
   },
   {
