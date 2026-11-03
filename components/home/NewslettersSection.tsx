@@ -52,7 +52,7 @@ export function NewslettersSection() {
                   />
                 </div>
                 <div className="px-2 pt-6 pb-8">
-                  <div className="text-muted-foreground mb-4 flex items-center gap-4 text-[0.68rem] tracking-[0.28em] uppercase">
+                  <div className="text-muted-foreground mb-4 flex w-full items-center justify-between text-[0.68rem] tracking-[0.28em] uppercase">
                     <span className="text-blue-light font-semibold">
                       {p.category}
                     </span>
@@ -60,7 +60,6 @@ export function NewslettersSection() {
                     <span className="text-blue-light font-semibold">
                       {p.date}
                     </span>
-                    <span className="h-px w-3 bg-neutral-400" />
                     
                   </div>
                   <h3 className="group-hover:text-accent mb-3 font-serif text-2xl leading-snug text-neutral-700 transition-colors md:text-[1.7rem]">
