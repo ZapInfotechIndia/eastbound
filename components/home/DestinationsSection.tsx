@@ -59,7 +59,7 @@ const DestinationsSection = () => {
 
   useEffect(() => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
-      setActiveIndex(1);
+      setActiveIndex(0);
     }
   }, []);
 
