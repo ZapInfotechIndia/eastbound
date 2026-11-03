@@ -153,7 +153,7 @@ function ShortEnquiryFields({
       <EnquiryField label="Destination" theme={theme}>
         <select name="destination" className={inputClass} defaultValue="">
           <option value="" disabled>
-            Where would you like to go?
+            Destinations We Specialise In
           </option>
           {destinationOptions.map((d) => (
             <option key={d} value={d}>{d}</option>
@@ -165,7 +165,7 @@ function ShortEnquiryFields({
           name="message"
           rows={4}
           className={`${inputClass} resize-none`}
-          placeholder="Dates, party size, anything you already dream of..."
+          placeholder="Rates, party size, anything you already think of"
         />
       </EnquiryField>
     </>

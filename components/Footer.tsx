@@ -43,7 +43,7 @@ export function Footer() {
               </div>
               <div>
                 <dt className="text-primary-foreground/50 text-[0.65rem] tracking-[0.3em] uppercase">
-                  Studio
+                  Head Office
                 </dt>
                 <dd className="mt-1">{site.address}</dd>
               </div>
