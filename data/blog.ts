@@ -4,7 +4,6 @@ export type Post = {
   title: string;
   excerpt: string;
   date: string;
-  readTime: string;
   image: string;
   link: string;
 };
