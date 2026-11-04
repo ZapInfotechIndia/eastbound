@@ -111,9 +111,9 @@ const ContactPage = () => {
           <div className="container">
             <Reveal className="mb-16 max-w-xl lg:ml-[42%]">
               <p className="eyebrow text-blue-light mb-4">Our Offices</p>
-           <h2 className="font-serif text-3xl leading-[1.05] text-white md:text-5xl text-center w-full">
-              Offices in <span className="text-accent">Five Countries</span>
-            </h2>
+              <h2 className="font-serif text-3xl leading-[1.05] text-white md:text-5xl text-left md:text-center">
+                Offices in <span className="text-accent">Five Countries</span>
+              </h2>
             </Reveal>
 
             <div className="grid gap-6 md:grid-cols-12">
