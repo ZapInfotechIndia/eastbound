@@ -317,7 +317,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* <Sustainability /> */}
+        <Sustainability />
 
         <section className="bg-blue-light text-primary-foreground py-20 md:py-28">
           <div className="container">
