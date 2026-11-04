@@ -109,7 +109,7 @@ const ContactPage = () => {
           style={{ backgroundImage: `url('/images/offices.jpg')` }}
         >
           <div className="container">
-            <Reveal className="mb-16 max-w-xl lg:ml-[42%]">
+            <Reveal className="mb-16 ">
               <p className="eyebrow text-blue-light mb-4">Our Offices</p>
               <h2 className="font-serif text-3xl leading-[1.05] text-white md:text-5xl text-left md:text-center">
                 Offices in <span className="text-accent">Five Countries</span>
