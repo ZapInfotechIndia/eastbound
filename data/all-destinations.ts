@@ -25,7 +25,7 @@ export const allDestinations: DestinationDetail[] = [
     name: "India",
     about:
       "India is a realm of layered history, vibrant cities, sacred rivers, and deeply immersive cultural experiences. From royal Rajasthan to the misty hills of the Himalayas and the serene backwaters of Kerala, every journey can be shaped around heritage, food, wildlife, and local life.",
-    image: "/images/destinations/india/1.jpg",
+    image: "/images/destinations/india/5.jpg",
     highlightPlaces: [
       {
         name: "Delhi",
