@@ -133,7 +133,7 @@ const AboutUs = () => {
             <Reveal className="mb-14">
               <p className="eyebrow text-blue-light mb-4">Our Values</p>
               <h2 className="text-blue-dark font-serif text-4xl leading-[1.04] md:text-5xl">
-                What guides every journey we build. 1
+                What guides every journey we build. 
               </h2>
             </Reveal>
 
