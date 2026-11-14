@@ -8,6 +8,16 @@ interface VenueGalleryProps {
   section: EventBoardSection;
 }
 
+// Dummy Images
+const dummyImages = [
+  "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1511578314322-379afb476865?w=900&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=900&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=900&auto=format&fit=crop",
+];
+
 export default function VenueGallery({
   section,
 }: VenueGalleryProps) {
@@ -23,8 +33,15 @@ export default function VenueGallery({
 
       {/* Venue Categories */}
       <div className="mt-8 border-t border-slate-200">
+
         {section.details?.map((detail, index) => {
           const isOpen = activeIndex === index;
+
+          // Actual images or dummy images
+          const galleryImages =
+            detail.images && detail.images.length > 0
+              ? detail.images.map((image) => image.src)
+              : dummyImages;
 
           return (
             <div
@@ -42,7 +59,9 @@ export default function VenueGallery({
                 className="group flex w-full items-center justify-between gap-4 py-5 text-left"
               >
                 <div className="min-w-0 flex-1">
+
                   <div className="flex flex-wrap items-center gap-3">
+
                     <span className="text-[11px] tracking-[2px] text-[#a18a65]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -52,8 +71,9 @@ export default function VenueGallery({
                     </h3>
 
                     <span className="text-[11px] text-slate-400">
-                      ({detail.images?.length ?? 0} Venues)
+                      ({galleryImages.length} Venues)
                     </span>
+
                   </div>
 
                   {detail.description && (
@@ -61,9 +81,10 @@ export default function VenueGallery({
                       {detail.description}
                     </p>
                   )}
+
                 </div>
 
-                {/* Arrow */}
+                {/* Accordion Arrow */}
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-all duration-300 ${
                     isOpen
@@ -82,6 +103,7 @@ export default function VenueGallery({
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </span>
+
               </button>
 
               {/* Gallery */}
@@ -93,40 +115,51 @@ export default function VenueGallery({
                 }`}
               >
                 <div className="overflow-hidden">
+
                   <div className="pb-6 pt-1">
+
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
 
-                      {detail.images?.map((image) => (
+                      {galleryImages.map((src, imageIndex) => (
                         <div
-                          key={image.src}
-                          className="overflow-hidden rounded-sm bg-slate-100"
+                          key={`${detail.heading}-${imageIndex}`}
+                          className="group overflow-hidden rounded-sm bg-slate-100"
                         >
-                          <div className="aspect-[4/3]">
+
+                          <div className="aspect-[4/3] overflow-hidden">
+
                             <img
-                              src={image.src}
+                              src={src}
                               alt={detail.heading}
                               loading="lazy"
-                              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
+
                           </div>
+
                         </div>
                       ))}
 
                     </div>
+
                   </div>
+
                 </div>
               </div>
 
             </div>
           );
         })}
+
       </div>
 
       {/* Closing */}
       <div className="mt-8 border-l-2 border-[#a18a65] bg-[#f7f6f3] px-5 py-5">
+
         <p className="text-sm leading-7 text-slate-600">
           {section.closingLine}
         </p>
+
       </div>
 
     </div>
