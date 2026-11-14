@@ -1,8 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
-import type { EventBoardSection } from "@/types/eventsBoard";
-// Import path ko apne actual types file ke path ke according adjust karein.
+import type { EventBoardSection } from "@/data/eventsBoard";
 
 interface VenueGalleryProps {
   section: EventBoardSection;
@@ -15,6 +15,7 @@ export default function VenueGallery({
 
   return (
     <div className="w-full">
+
       {/* Intro */}
       <p className="max-w-3xl text-[15px] leading-7 text-slate-500">
         {section.intro}
@@ -26,11 +27,17 @@ export default function VenueGallery({
           const isOpen = activeIndex === index;
 
           return (
-            <div key={detail.heading} className="border-b border-slate-200">
+            <div
+              key={detail.heading}
+              className="border-b border-slate-200"
+            >
+
               {/* Accordion Header */}
               <button
                 type="button"
-                onClick={() => setActiveIndex(isOpen ? -1 : index)}
+                onClick={() =>
+                  setActiveIndex(isOpen ? -1 : index)
+                }
                 aria-expanded={isOpen}
                 className="group flex w-full items-center justify-between gap-4 py-5 text-left"
               >
@@ -56,6 +63,7 @@ export default function VenueGallery({
                   )}
                 </div>
 
+                {/* Arrow */}
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-all duration-300 ${
                     isOpen
@@ -79,26 +87,36 @@ export default function VenueGallery({
               {/* Gallery */}
               <div
                 className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
-                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  isOpen
+                    ? "grid-rows-[1fr]"
+                    : "grid-rows-[0fr]"
                 }`}
               >
                 <div className="overflow-hidden">
                   <div className="pb-6 pt-1">
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-                    {detail.images?.map((image) => (
-                        <div key={image.src}>
+
+                      {detail.images?.map((image) => (
+                        <div
+                          key={image.src}
+                          className="overflow-hidden rounded-sm bg-slate-100"
+                        >
+                          <div className="aspect-[4/3]">
                             <img
-                            src={image.src}
-                            alt={detail.heading}
-                            loading="lazy"
-                            className="h-full w-full object-cover"
+                              src={image.src}
+                              alt={detail.heading}
+                              loading="lazy"
+                              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                             />
+                          </div>
                         </div>
-                        ))}
+                      ))}
+
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           );
         })}
@@ -110,6 +128,7 @@ export default function VenueGallery({
           {section.closingLine}
         </p>
       </div>
+
     </div>
   );
 }
