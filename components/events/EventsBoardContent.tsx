@@ -214,11 +214,7 @@ const renderFormBlock = (section: (typeof sections)[number]) => {
 const renderSectionContent = (section: (typeof sections)[number]) => {
   switch (section.id) {
     case "explore-event-venues":
-      return (
-        <>
-        <VenueGallery section={section} />;
-        </>
-      );
+      return <VenueGallery section={section} />;
 
     case "browse-experiences":
       return (

@@ -85,18 +85,16 @@ export default function VenueGallery({
                 <div className="overflow-hidden">
                   <div className="pb-6 pt-1">
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-                      {detail.images?.map((image) => (
+                    {detail.images?.map((image) => (
                         <div key={image.src}>
-                          <div className="aspect-[4/3] overflow-hidden rounded-sm bg-slate-100">
                             <img
-                              src={image.src}
-                              alt={detail.heading}
-                              loading="lazy"
-                              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                            src={image.src}
+                            alt={detail.heading}
+                            loading="lazy"
+                            className="h-full w-full object-cover"
                             />
-                          </div>
                         </div>
-                      ))}
+                        ))}
                     </div>
                   </div>
                 </div>
