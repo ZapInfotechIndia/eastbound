@@ -6,7 +6,6 @@ import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { eventProposalRequestPath } from "@/components/events/EventProposalForm";
-import VenueGallery from "@/components/events/VenueGallery";
 import EventRequestForm, {
   eventRequestSources,
   type EventRequestSource,
@@ -214,7 +213,18 @@ const renderFormBlock = (section: (typeof sections)[number]) => {
 const renderSectionContent = (section: (typeof sections)[number]) => {
   switch (section.id) {
     case "explore-event-venues":
-      return <VenueGallery section={section} />;
+      return (
+        <>
+          <p className={introTextClass}>{section.intro}</p>
+
+          {section.details?.map((detail) => (
+            <div key={detail.heading} className="mt-8 max-w-3xl">
+              <h3 className={detailHeadingClass}>{detail.heading}</h3>
+              {detail.list ? <BoardList items={detail.list} /> : null}
+            </div>
+          ))}
+        </>
+      );
 
     case "browse-experiences":
       return (
