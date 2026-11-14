@@ -2,6 +2,9 @@ export type EventBoardDetail = {
   heading: string;
   description?: string;
   list?: string[];
+   images?: {
+    src: string;
+  }[];
   download?: {
     label: string;
     href: string;
