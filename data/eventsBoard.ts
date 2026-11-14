@@ -2,6 +2,9 @@ export type EventBoardDetail = {
   heading: string;
   description?: string;
   list?: string[];
+   images?: {
+    src: string;
+  }[];
   download?: {
     label: string;
     href: string;
@@ -50,18 +53,75 @@ export const eventBoardSections: EventBoardSection[] = [
       "Discover exceptional venues for incentives, conferences, celebrations and private events.",
     intro:
       "The right setting shapes everything about an event: how guests arrive, how they gather, how they remember it. Our team knows the region's venues first-hand, and we match each one to your group, your purpose and the mood you want to create.",
-    details: [
+    
+     details: [
       {
-        heading: "Venue styles",
-        list: [
-          "Heritage palaces and forts — Courtyards, durbar halls and ramparts that give galas, weddings and welcome dinners a real sense of occasion.",
-          "Luxury resorts and retreats — Refined, private properties for incentive groups, leadership offsites and celebrations that unfold over several days.",
-          "Conference and meeting hotels — Well-equipped spaces for larger gatherings, with the technical support and room capacity to match.",
-          "Private estates and homes — Intimate, exclusive settings for small dinners, family celebrations and gatherings that call for privacy.",
-          "Distinctive spaces — Gardens, riverfronts, tented camps and working estates: places that make an event feel unlike any other.",
+        heading: "Heritage palaces and forts",
+        description:
+          "Courtyards, durbar halls and ramparts that give galas, weddings and welcome dinners a real sense of occasion.",
+        images: [
+          { src: "/images/events/venues/heritage-1.jpg" },
+          { src: "/images/events/venues/heritage-2.jpg" },
+          { src: "/images/events/venues/heritage-3.jpg" },
+          { src: "/images/events/venues/heritage-4.jpg" },
+          { src: "/images/events/venues/heritage-5.jpg" },
+          { src: "/images/events/events/venues/heritage-6.jpg" },
+        ],
+      },
+      {
+        heading: "Luxury resorts and retreats",
+        description:
+          "Refined, private properties for incentive groups, leadership offsites and celebrations that unfold over several days.",
+        images: [
+          { src: "/images/venues/resort-1.jpg" },
+          { src: "/images/venues/resort-2.jpg" },
+          { src: "/images/venues/resort-3.jpg" },
+          { src: "/images/venues/resort-4.jpg" },
+          { src: "/images/venues/resort-5.jpg" },
+          { src: "/images/venues/resort-6.jpg" },
+        ],
+      },
+      {
+        heading: "Conference and meeting hotels",
+        description:
+          "Well-equipped spaces for larger gatherings, with the technical support and room capacity to match.",
+        images: [
+          { src: "/images/venues/conference-1.jpg" },
+          { src: "/images/venues/conference-2.jpg" },
+          { src: "/images/venues/conference-3.jpg" },
+          { src: "/images/venues/conference-4.jpg" },
+          { src: "/images/venues/conference-5.jpg" },
+          { src: "/images/venues/conference-6.jpg" },
+        ],
+      },
+      {
+        heading: "Private estates and homes",
+        description:
+          "Intimate, exclusive settings for small dinners, family celebrations and gatherings that call for privacy.",
+        images: [
+          { src: "/images/venues/estate-1.jpg" },
+          { src: "/images/venues/estate-2.jpg" },
+          { src: "/images/venues/estate-3.jpg" },
+          { src: "/images/venues/estate-4.jpg" },
+          { src: "/images/venues/estate-5.jpg" },
+          { src: "/images/venues/estate-6.jpg" },
+        ],
+      },
+      {
+        heading: "Distinctive spaces",
+        description:
+          "Gardens, riverfronts, tented camps and working estates: places that make an event feel unlike any other.",
+        images: [
+          { src: "/images/venues/distinctive-1.jpg" },
+          { src: "/images/venues/distinctive-2.jpg" },
+          { src: "/images/venues/distinctive-3.jpg" },
+          { src: "/images/venues/distinctive-4.jpg" },
+          { src: "/images/venues/distinctive-5.jpg" },
+          { src: "/images/venues/distinctive-6.jpg" },
         ],
       },
     ],
+
     closingLine:
       "Not sure which setting suits your plans? Tell us what you have in mind and we'll shortlist the right options.",
     cta: {
