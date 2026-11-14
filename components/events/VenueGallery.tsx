@@ -2,14 +2,16 @@
 "use client";
 
 import { useState } from "react";
-import type { EventBoardSection } from "@/data/eventsBoard";
+import type {
+  EventBoardSection,
+  EventBoardDetail,
+} from "@/data/eventsBoard";
 
 interface VenueGalleryProps {
   section: EventBoardSection;
 }
 
-// Dummy Images
-const dummyImages = [
+const dummyImages: string[] = [
   "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1511578314322-379afb476865?w=900&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&auto=format&fit=crop",
@@ -22,6 +24,14 @@ export default function VenueGallery({
   section,
 }: VenueGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const getGalleryImages = (detail: EventBoardDetail): string[] => {
+    if (detail.images && detail.images.length > 0) {
+      return detail.images.map((image) => image.src);
+    }
+
+    return dummyImages;
+  };
 
   return (
     <div className="w-full">
@@ -36,12 +46,7 @@ export default function VenueGallery({
 
         {section.details?.map((detail, index) => {
           const isOpen = activeIndex === index;
-
-          // Actual images or dummy images
-          const galleryImages =
-            detail.images && detail.images.length > 0
-              ? detail.images.map((image) => image.src)
-              : dummyImages;
+          const galleryImages = getGalleryImages(detail);
 
           return (
             <div
@@ -120,25 +125,23 @@ export default function VenueGallery({
 
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
 
-                      {galleryImages.map((src, imageIndex) => (
-                        <div
-                          key={`${detail.heading}-${imageIndex}`}
-                          className="group overflow-hidden rounded-sm bg-slate-100"
-                        >
-
-                          <div className="aspect-[4/3] overflow-hidden">
-
-                            <img
-                              src={src}
-                              alt={detail.heading}
-                              loading="lazy"
-                              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-
+                      {galleryImages.map(
+                        (src: string, imageIndex: number) => (
+                          <div
+                            key={`${detail.heading}-${imageIndex}`}
+                            className="group overflow-hidden rounded-sm bg-slate-100"
+                          >
+                            <div className="aspect-[4/3] overflow-hidden">
+                              <img
+                                src={src}
+                                alt={detail.heading}
+                                loading="lazy"
+                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                              />
+                            </div>
                           </div>
-
-                        </div>
-                      ))}
+                        )
+                      )}
 
                     </div>
 
@@ -155,11 +158,9 @@ export default function VenueGallery({
 
       {/* Closing */}
       <div className="mt-8 border-l-2 border-[#a18a65] bg-[#f7f6f3] px-5 py-5">
-
         <p className="text-sm leading-7 text-slate-600">
           {section.closingLine}
         </p>
-
       </div>
 
     </div>
