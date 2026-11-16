@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
-      <HeroBottomBanner />
+      {/* <HeroBottomBanner /> */}
       {/* <BlocksSection /> */}
       <DestinationsSection />
       <WhySection />
