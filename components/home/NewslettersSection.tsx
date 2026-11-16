@@ -61,7 +61,6 @@ export function NewslettersSection() {
                     <span className="text-blue-light font-semibold">
                       {p.date}
                     </span>
-                    
                   </div>
                   <h3 className="group-hover:text-accent mb-3 font-serif text-2xl leading-snug text-neutral-700 transition-colors md:text-[1.7rem]">
                     {p.title}
@@ -69,8 +68,7 @@ export function NewslettersSection() {
                   <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-light">
                     {p.excerpt}
                   </p>
-                  <Link
-                    href={p.link}
+                  <span
                     className={cn(
                       buttonVariants({ variant: "link", size: "link" }),
                     )}
@@ -79,7 +77,7 @@ export function NewslettersSection() {
                     <span className="btn-link-icon">
                       <ArrowUpRight className="h-3 w-3" />
                     </span>
-                  </Link>
+                  </span>
                 </div>
               </Reveal>
             </Link>
