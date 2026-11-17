@@ -88,7 +88,7 @@ const Hero = () => {
             className="w-full sm:w-auto"
             onClick={() => router.push("/contact")}
           >
-            Talk to our experts <MoveRight />
+            Talk to our experts<MoveRight />
           </Button>
         </div>
       </div>
