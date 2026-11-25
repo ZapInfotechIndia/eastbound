@@ -1,0 +1,44 @@
+export type Post = {
+  id: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  link: string;
+};
+
+export const posts: Post[] = [
+
+  {
+    id: "october-2026",
+    category: "Eastnews",
+    title: "October, 2026",
+    excerpt:
+      "From Ran Baas palace, Patiala - Chambal River Safari - Ganga Dussehra and more",
+    date: "October 2026",
+    image: "/images/newsletters/October2026.jpg",
+    link: "https://eastboundgroup.aflip.in/119b1c212e.html",
+  },
+  {
+    id: "september-2026",
+    category: "Eastnews",
+    title: "September 2026",
+    excerpt:
+      "From Eye to Eye Eastbound - Narendra Bhawan, Bikaner - Kites, Chai & Calligraphy and more",
+    date: "September 2026",
+    image: "/images/newsletters/September2026.png",
+    link: "https://eastboundgroup.aflip.in/63656de1f8.html#page/1",
+  },
+  {
+    id: "july-2026",
+    category: "Eastnews",
+    title: "July 2026",
+    excerpt:
+      "From Anopura Jaipur - The Living Fort of India - Kaav Safari Lodge, Kabini and more",
+    date: "July 2026",
+    image: "/images/newsletters/July2026.png",
+    link: "https://eastboundgroup.aflip.in/3ee6e0f3d4.html",
+  },
+  
+];
